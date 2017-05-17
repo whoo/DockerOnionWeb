@@ -1,0 +1,12 @@
+run/hidden/hostname
+run/hidden/private_key
+run/lib/cached-certs
+run/lib/cached-microdesc-consensus
+run/lib/cached-microdescs.new
+run/lib/lock
+run/lib/state
+run/log/access.log
+run/log/error.log
+run/log/notices.log
+run/run/nginx.pid
+
