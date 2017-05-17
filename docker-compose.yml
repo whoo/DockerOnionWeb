@@ -1,0 +1,24 @@
+version: '3'
+services:
+        torserver:
+                build: torserv
+                user: "1000"
+                entrypoint:
+                        - tor 
+                        - -f 
+                        - /cfg/torrc.sample
+                volumes:
+                        - ./torserv/cfg:/cfg
+                        - ./run:/tor
+                links:
+                        - nginx
+        nginx:
+                build: nginx
+                volumes:
+                        - ./run/log:/var/log/nginx
+                        - ./run/run:/run/nginx
+                        - ./run/www:/var/www
+                entrypoint:
+                        - nginx
+                        - -g
+                        - 'daemon off;'
